@@ -1,8 +1,5 @@
-interface NodeStructure<T> {
-    val: T;
-    next: NodeStructure<T> | null;
-    prev?: NodeStructure<T> | null;
-}
+import {NodeStructure, LinkedList} from "./type";
+
 
 class NodeForSinglyLinkedList<T> implements NodeStructure<T> {
     val: T;
@@ -14,20 +11,6 @@ class NodeForSinglyLinkedList<T> implements NodeStructure<T> {
     }
 }
 
-interface LinkedList<T> {
-    head: NodeStructure<T> | null;
-    tail: NodeStructure<T> | null;
-    length: number;
-    push: Function;
-    pop: Function;
-    insert:Function;
-    reverse:Function;
-    remove:Function;
-    shift:Function;
-    unshift:Function;
-    get:Function;
-    set:Function;
-}
 
 class SinglyLinkedList<T> implements LinkedList<T> {
     head: NodeForSinglyLinkedList<T> | null;
