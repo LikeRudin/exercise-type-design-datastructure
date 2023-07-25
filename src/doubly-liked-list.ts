@@ -5,7 +5,11 @@ class NodeForDoublyLinkedList<T> implements NodeStructure<T> {
     next: NodeStructure<T> | null;
     prev: NodeStructure<T> | null;
 
-    constructor(val: T, next: NodeStructure<T> | null, prev: NodeStructure<T> | null){
+    constructor(
+        val: T,
+        next: NodeStructure<T> | null = null,
+        prev: NodeStructure<T> | null = null
+        ){
         this.val = val;
         this.next = next;
         this.prev = prev;

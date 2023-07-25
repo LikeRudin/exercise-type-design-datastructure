@@ -1,6 +1,7 @@
-# about this repository structure
+# about structure
 
 notion - md files for explanation about data structure
+
 src - source code
 
 # study logs
