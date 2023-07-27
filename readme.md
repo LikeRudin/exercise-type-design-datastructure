@@ -84,3 +84,35 @@ reverse(){
 
     }
 ```
+
+# 6 doubly linked list circular ref
+
+doubly-linked-list에서 
+
+next의 prev는 자기자신이므로 
+
+circular ref 가 발생하는것은 완전히 자연스러운일이다.
+
+```
+DoublyLinkedList {
+  head: <ref *1> NodeForDoublyLinkedList {
+    val: '111',
+    next: NodeForDoublyLinkedList {
+      val: '222',
+      next: [NodeForDoublyLinkedList],
+      prev: [Circular *1]
+    },
+    prev: null
+  },
+  tail: <ref *2> NodeForDoublyLinkedList {
+    val: '333',
+    next: null,
+    prev: NodeForDoublyLinkedList {
+      val: '222',
+      next: [Circular *2],
+      prev: [NodeForDoublyLinkedList]
+    }
+  },
+  length: 3
+}
+```

@@ -4,6 +4,7 @@ export interface NodeStructure<T> {
     prev?: NodeStructure<T> | null;
 }
 
+
 export interface LinkedList<T> {
     head: NodeStructure<T> | null;
     tail: NodeStructure<T> | null;
