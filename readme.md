@@ -116,3 +116,11 @@ DoublyLinkedList {
   length: 3
 }
 ```
+
+# 7 reverse 
+
+if don't change the node 
+```
+while(node)
+```
+this code doens't stop to the end of the world
