@@ -124,3 +124,90 @@ if don't change the node
 while(node)
 ```
 this code doens't stop to the end of the world
+
+
+# stack
+
+1. 처음 만들었을땐
+bottom이 왜 필요한지 몰랐다.
+
+그런데 지금도 모른다.
+왜냐하면 저것은 그저 top과 bottom이 일치할경우  (stack size가 1일경우)
+bottom을 null로 초기화하는 작업만 하고있을뿐이다.
+
+2. remove가 `O(1)`: 상수시간에 해결되어야한다.
+
+처음에는 linked-list와 같이 `while (node.next)`를 사용했으나, 그렇게되면
+시간복잡도가 `O(n)` 이 된다.
+
+3. 스택은 Top을 내보내고
+Top의 포인터는 아래에위치한 노드를 가리킨다
+
+```
+□ top
+↓ 
+□
+↓ 
+□
+↓ 
+□ bottom
+```
+
+```
+push
+
+```
+1. create newTop
+2. newtop.next = this.top
+
+□ newTop
+↓ 
+□ this.top
+↓ 
+□
+↓ 
+□
+↓ 
+□ bottom
+
+3. set this.top = newTop
+
+
+□ this.top === newTop
+↓ 
+□ 
+↓ 
+□
+↓ 
+□
+↓ 
+□ bottom
+```
+pop
+```
+const popNode = this.top
+
+□ this.top === popNode
+↓ 
+□ this.top.next 
+↓ 
+□
+↓ 
+□
+↓ 
+□ bottom
+
+
+this.top = this.top.next
+
+□ popNode
+↓
+□ this.top //this.top.next 
+↓ 
+□
+↓ 
+□
+↓ 
+□ bottom
+
+```
