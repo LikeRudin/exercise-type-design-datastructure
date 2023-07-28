@@ -211,3 +211,47 @@ this.top = this.top.next
 □ bottom
 
 ```
+
+
+queue
+```
+head    tail
+□ → □ → □ 
+```
+
+enqueue
+```
+create newNode
+this.tail.next = newNode
+
+head    tail  newNode
+□ -→ □ -→ □ -→ □
+
+this.tail = newNode
+
+
+head         tail = newNode
+□ -→ □ -→ □ -→ □
+```
+
+dequeue
+
+```
+const deqeueNode = this.head
+
+dequeue
+head            tail
+□ -→ □ -→ □ -→ □
+
+
+this.head = this.head.next
+
+dequeue  head         tail
+    □ --→ □ --→ □ --→ □
+
+run dequeue
+
+head         tail
+ □ --→ □ --→ □
+
+```
