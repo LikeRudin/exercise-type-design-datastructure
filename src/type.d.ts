@@ -6,7 +6,13 @@ export interface NodeStructure<T> {
 
 export interface NodeForGraph<T> {
     val: T;
-    edge: NodeForGraph<T>[];
+    edges: NodeForGraph<T>[];
+}
+
+export interface NodeForBinaryTree<T>{
+    val: T;
+    left:  NodeForBinaryTree<T> | null;
+    right:  NodeForBinaryTree<T> | null;
 }
 
 
