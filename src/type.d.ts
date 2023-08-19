@@ -16,6 +16,11 @@ export interface NodeForBinaryTree<T>{
 }
 
 
+export interface BinaryTree<T> {
+    root: NodeForBinaryTree<T> | null;
+}
+
+
 
 export interface LinkedList<T> {
     head: NodeStructure<T> | null;
