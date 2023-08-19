@@ -51,10 +51,33 @@ class BinarySearchTree<T> implements BinaryTree<T> {
         return this
 
         } catch (e) {
-            console.log(e)
+            console.error(e)
             return this;
         }}
-    search(){}
+    search(val: T){const newNode = new NodeForBinarySearchTree(val);
+        if (this.root === null){
+            return null
+        }
+
+        let nodeForComparison: NodeForBinarySearchTree<T> | null = this.root;
+        while (true){
+            let parent;
+            if (nodeForComparison!.val > val){
+                parent = nodeForComparison;
+                nodeForComparison = nodeForComparison!.left;
+            } else if (nodeForComparison!.val < val) {
+                parent = nodeForComparison;
+                nodeForComparison = nodeForComparison!.right;
+            } else {
+                return nodeForComparison
+                }
+            if (nodeForComparison === null){
+                nodeForComparison = parent;
+                return null
+            }
+        }
+
+    }
 }
 
 
@@ -66,3 +89,6 @@ console.log(myFirstTree.insert(2));
 console.log(myFirstTree);
 console.log(myFirstTree.insert(3));
 console.log(myFirstTree.insert(7));
+console.log(myFirstTree.search(3));
+console.log(myFirstTree.search(5));
+console.log(myFirstTree.search(10));
