@@ -4,6 +4,12 @@ export interface NodeStructure<T> {
     prev?: NodeStructure<T> | null;
 }
 
+export interface NodeForGraph<T> {
+    val: T;
+    edge: NodeForGraph<T>[];
+}
+
+
 
 export interface LinkedList<T> {
     head: NodeStructure<T> | null;
