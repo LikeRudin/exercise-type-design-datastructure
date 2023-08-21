@@ -19,7 +19,7 @@
   "build": "tsc",
   
     
-  "dev": "nodemon --exec ts-node src/binary-search-tree.ts",
+  "dev": "nodemon --exec ts-node src/tree-traversal.ts",
   
     
   "start": "node build/stack.js"

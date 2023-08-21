@@ -1,6 +1,6 @@
 import { NodeForBinaryTree, BinaryTree } from "./type";
 
-class NodeForBinarySearchTree<T> implements NodeForBinaryTree<T>{
+export class NodeForBinarySearchTree<T> implements NodeForBinaryTree<T>{
     val: T;
     left: NodeForBinarySearchTree<T> | null;
     right: NodeForBinarySearchTree<T> | null;
@@ -11,7 +11,7 @@ class NodeForBinarySearchTree<T> implements NodeForBinaryTree<T>{
     }
 } 
 
-class BinarySearchTree<T> implements BinaryTree<T> {
+export class BinarySearchTree<T> implements BinaryTree<T> {
     root: NodeForBinarySearchTree<T> | null;
     constructor(){
         this.root = null;

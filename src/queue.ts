@@ -1,7 +1,6 @@
-import { threadId } from "worker_threads";
 import { NodeStructure } from "./type";
 
-class NodeForQueue<T> implements NodeStructure<T>{
+export class NodeForQueue<T> implements NodeStructure<T>{
     val: T;
     next: NodeForQueue<T> |null;
 
@@ -11,7 +10,7 @@ class NodeForQueue<T> implements NodeStructure<T>{
     }
 }
 
-class Queue<T> {
+export class Queue<T> {
     head: NodeForQueue<T> |null;
     tail: NodeForQueue<T> |null;
     size: number;
@@ -27,9 +26,10 @@ class Queue<T> {
         if (this.size === 0){
             this.head = newNode;
             this.tail = newNode;
-        }
-        this.tail!.next = newNode
+        } else {
+        this.tail!.next = newNode}
         this.size++;
+        return this
     }
     dequeue(){
         if (this.size === 0 ){
@@ -39,7 +39,6 @@ class Queue<T> {
         this.head = this.head!.next;
         this.size--;
         return dequeueNode; 
-        
     }
 
 }
