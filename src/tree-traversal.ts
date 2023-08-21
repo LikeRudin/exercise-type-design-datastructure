@@ -1,4 +1,4 @@
-import { NodeForQueue, Queue } from "./queue";
+import { Queue } from "./queue";
 import { NodeForBinarySearchTree } from "./binary-search-tree";
 import { BinarySearchTree } from "./binary-search-tree";
 
