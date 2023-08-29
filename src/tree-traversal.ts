@@ -2,12 +2,10 @@ import { Queue } from "./queue";
 import { NodeForBinarySearchTree } from "./binary-search-tree";
 import { BinarySearchTree } from "./binary-search-tree";
 
-
-
-const bfs = (target: NodeForBinarySearchTree<number>) => {
-    const queue = new Queue<NodeForBinarySearchTree<number>>();
+const bfs = <T>(target: NodeForBinarySearchTree<T>) => {
+    const queue = new Queue<NodeForBinarySearchTree<T>>();
     queue.enqueue(target);
-    const answer = [];
+    const answer:T[] = [];
     answer.push(target.val);
 
     while(queue.size){
