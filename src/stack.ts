@@ -1,6 +1,6 @@
 import { NodeStructure } from "./type";
 
-class NodeForStack<T> implements NodeStructure<T> {
+export class NodeForStack<T> implements NodeStructure<T> {
     val: T;
     next: NodeStructure<T> | null;
     constructor(val:T, next:NodeStructure<T> | null =null){
@@ -9,7 +9,7 @@ class NodeForStack<T> implements NodeStructure<T> {
     }
 }
 
-class Stack<T> {
+export class Stack<T> {
     top: NodeForStack<T> | null;
     bottom: NodeForStack<T>| null;
     size: number;
@@ -45,17 +45,3 @@ class Stack<T> {
     }   
 
 }
-
-const strStack = new Stack<string>();
-
-console.log(strStack);
-console.log(strStack.push("000"));
-console.log(strStack)
-console.log(strStack.push("111"));
-console.log(strStack);
-console.log(strStack.push("222"));
-console.log(strStack);
-console.log(strStack.pop());
-console.log(strStack);
-
-
