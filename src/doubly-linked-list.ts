@@ -1,7 +1,7 @@
 import { NodeStructure, LinkedList } from "./type";
 
 
-class NodeForDoublyLinkedList<T> implements NodeStructure<T> {
+export class NodeForDoublyLinkedList<T> implements NodeStructure<T> {
     val: T;
     next: NodeForDoublyLinkedList<T> | null;
     prev: NodeForDoublyLinkedList<T> | null;
@@ -17,7 +17,7 @@ class NodeForDoublyLinkedList<T> implements NodeStructure<T> {
     }
 }
 
-class DoublyLinkedList<T> implements LinkedList<T>{
+export class DoublyLinkedList<T> implements LinkedList<T>{
     head: NodeForDoublyLinkedList<T> | null;
     tail: NodeForDoublyLinkedList<T> | null;
     length: number;
@@ -176,13 +176,3 @@ class DoublyLinkedList<T> implements LinkedList<T>{
     };
 
 }
-
-
-const strDL = new DoublyLinkedList<string>();
-
-console.log(strDL.push("111"));
-console.log(strDL.push("222"));
-console.log(strDL.push("333"));
-
-console.log(strDL.reverse());
-console.log("exit");

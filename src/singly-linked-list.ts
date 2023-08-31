@@ -1,7 +1,7 @@
 import {NodeStructure, LinkedList} from "./type";
 
 
-class NodeForSinglyLinkedList<T> implements NodeStructure<T> {
+export class NodeForSinglyLinkedList<T> implements NodeStructure<T> {
     val: T;
     next: NodeForSinglyLinkedList<T> | null;
 
@@ -12,7 +12,7 @@ class NodeForSinglyLinkedList<T> implements NodeStructure<T> {
 }
 
 
-class SinglyLinkedList<T> implements LinkedList<T> {
+export class SinglyLinkedList<T> implements LinkedList<T> {
     head: NodeForSinglyLinkedList<T> | null;
     tail: NodeForSinglyLinkedList<T> | null;
     length: number;
