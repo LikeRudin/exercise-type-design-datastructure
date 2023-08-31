@@ -68,9 +68,8 @@ export class DoublyLinkedList<T> implements LinkedList<T>{
         this.length--;
 
         return shift
-
-
     };
+    
     unshift(val:T, next = null, prev = null){
         const newNode = new NodeForDoublyLinkedList(val, next, null);
         if (this.length === 0){

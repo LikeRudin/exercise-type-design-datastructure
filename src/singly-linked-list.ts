@@ -134,7 +134,6 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
         
         const prev = this.get(index - 1);
         const next = this.get(index);
-        console.log(`prev:${JSON.stringify(prev)}, next: ${JSON.stringify(next)}`);
         const newNode = new NodeForSinglyLinkedList(val, next);
         
         prev!.next = newNode;
