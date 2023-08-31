@@ -179,16 +179,3 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
     }
 
 }
-
-
-const stringList = new SinglyLinkedList<string>();
-console.log(stringList.push("0"));
-console.log(stringList);
-console.log(stringList.push("1"));
-console.log(stringList.get(1));
-console.log(stringList.set(1, "B"));
-console.log(stringList);
-console.log(stringList.insert(1,"A"));
-console.log(stringList);
-
-console.log(stringList.reverse());
