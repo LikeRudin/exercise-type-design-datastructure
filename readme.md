@@ -87,9 +87,9 @@ reverse(){
 
 # 6 doubly linked list circular ref
 
-doubly-linked-list에서 
+doubly-linked-list에서
 
-next의 prev는 자기자신이므로 
+next의 prev는 자기자신이므로
 
 circular ref 가 발생하는것은 완전히 자연스러운일이다.
 
@@ -117,22 +117,23 @@ DoublyLinkedList {
 }
 ```
 
-# 7 reverse 
+# 7 reverse
 
-if don't change the node 
+if don't change the node
+
 ```
 while(node)
 ```
-this code doens't stop to the end of the world
 
+this code doens't stop to the end of the world
 
 # stack
 
 1. 처음 만들었을땐
-bottom이 왜 필요한지 몰랐다.
+   bottom이 왜 필요한지 몰랐다.
 
 그런데 지금도 모른다.
-왜냐하면 저것은 그저 top과 bottom이 일치할경우  (stack size가 1일경우)
+왜냐하면 저것은 그저 top과 bottom이 일치할경우 (stack size가 1일경우)
 bottom을 null로 초기화하는 작업만 하고있을뿐이다.
 
 2. remove가 `O(1)`: 상수시간에 해결되어야한다.
@@ -141,15 +142,15 @@ bottom을 null로 초기화하는 작업만 하고있을뿐이다.
 시간복잡도가 `O(n)` 이 된다.
 
 3. 스택은 Top을 내보내고
-Top의 포인터는 아래에위치한 노드를 가리킨다
+   Top의 포인터는 아래에위치한 노드를 가리킨다
 
 ```
 □ top
-↓ 
+↓
 □
-↓ 
+↓
 □
-↓ 
+↓
 □ bottom
 ```
 
@@ -157,57 +158,58 @@ Top의 포인터는 아래에위치한 노드를 가리킨다
 push
 
 ```
+
 1. create newTop
 2. newtop.next = this.top
 
 □ newTop
-↓ 
+↓
 □ this.top
-↓ 
+↓
 □
-↓ 
+↓
 □
-↓ 
+↓
 □ bottom
 
 3. set this.top = newTop
 
-
 □ this.top === newTop
-↓ 
-□ 
-↓ 
+↓
 □
-↓ 
+↓
 □
-↓ 
+↓
+□
+↓
 □ bottom
+
 ```
 pop
 ```
+
 const popNode = this.top
 
 □ this.top === popNode
-↓ 
-□ this.top.next 
-↓ 
+↓
+□ this.top.next
+↓
 □
-↓ 
+↓
 □
-↓ 
+↓
 □ bottom
-
 
 this.top = this.top.next
 
 □ popNode
 ↓
-□ this.top //this.top.next 
-↓ 
+□ this.top //this.top.next
+↓
 □
-↓ 
+↓
 □
-↓ 
+↓
 □ bottom
 
 ```
@@ -215,43 +217,48 @@ this.top = this.top.next
 
 queue
 ```
-head    tail
-□ → □ → □ 
+
+head tail
+□ → □ → □
+
 ```
 
 enqueue
 ```
+
 create newNode
 this.tail.next = newNode
 
-head    tail  newNode
+head tail newNode
 □ -→ □ -→ □ -→ □
 
 this.tail = newNode
 
-
-head         tail = newNode
+head tail = newNode
 □ -→ □ -→ □ -→ □
+
 ```
 
 dequeue
 
 ```
+
 const deqeueNode = this.head
 
 dequeue
-head            tail
+head tail
 □ -→ □ -→ □ -→ □
-
 
 this.head = this.head.next
 
-dequeue  head         tail
-    □ --→ □ --→ □ --→ □
+dequeue head tail
+□ --→ □ --→ □ --→ □
 
 run dequeue
 
-head         tail
- □ --→ □ --→ □
+head tail
+□ --→ □ --→ □
+
+```
 
 ```
