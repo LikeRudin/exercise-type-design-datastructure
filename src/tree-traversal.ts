@@ -23,10 +23,14 @@ const bfs = <T>(target: NodeForBinarySearchTree<T>) => {
   return visited;
 };
 
-const tree = new BinarySearchTree<number>();
-tree.insert(3);
-tree.insert(1);
-tree.insert(5);
-tree.insert(4);
-tree.insert(9);
-console.log(bfs(tree.root!));
+const test = () => {
+  const tree = new BinarySearchTree<number>();
+  tree.insert(3);
+  tree.insert(1);
+  tree.insert(5);
+  tree.insert(4);
+  tree.insert(9);
+  console.log(bfs(tree.root!));
+  }
+
+test()
